@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkstitch="http://inkstitch.org/namespace" width="100mm" height="100mm" viewBox="0 0 100 100">
+  <metadata><inkstitch:inkstitch_svg_version>4</inkstitch:inkstitch_svg_version></metadata>
+  <defs><clipPath id="c1" clipPathUnits="userSpaceOnUse">
+    <path d="M 0,0 H 20 V 20 H 0 Z" transform="translate(20,20)"/>
+  </clipPath></defs>
+  <rect x="10" y="10" width="40" height="40" style="fill:#ff0000" clip-path="url(#c1)"/>
+  <path d="M 10,30 L 90,30" style="fill:none;stroke:#0000ff;stroke-width:0.3" inkstitch:stroke_method="running_stitch" clip-path="url(#c1)"/>
+</svg>

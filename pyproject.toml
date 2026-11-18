@@ -1,0 +1,49 @@
+[project]
+name = "broder_ia"
+version = "0.1.1"
+description = "Chaîne de numérisation de broderie machine : dessin vectoriel vers fichier DST, via Ink/Stitch."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+  "ezdxf",
+  "matplotlib",
+  "numpy",
+  "pillow",
+  "pyembroidery",
+  "scikit-image",
+  "scipy",
+  "shapely",
+]
+
+[dependency-groups]
+dev = ["pytest", "pytest-cov", "hypothesis", "ruff", "mypy"]
+
+[tool.uv]
+package = false
+exclude-newer = "7 days"
+
+[tool.mypy]
+mypy_path = "prototype"
+# The prototype package chaine is untyped; typing it is its own change. Until then the tests may call it.
+untyped_calls_exclude = ["chaine"]
+
+[[tool.mypy.overrides]]
+module = ["chaine", "chaine.*"]
+follow_imports = "silent"
+
+[[tool.mypy.overrides]]
+module = ["shapely", "shapely.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["prototype/tests"]
+pythonpath = ["prototype"]
+addopts = "--strict-markers"
+markers = [
+  "fast: fast tier, run by /cp",
+  "slow: slow tier, run by /bcp with the fast tier",
+  "deep: deep tier, run with --deep at /bcpr or on demand",
+  "req(id): links test to requirement ID",
+  "story(id): links test to user story acceptance criterion",
+]

@@ -1,0 +1,4 @@
+There are no objects in the entire document that Ink/Stitch knows how to work with.
+
+Tip: Run Extensions > Ink/Stitch > Troubleshoot > Troubleshoot Objects
+

@@ -1,0 +1,87 @@
+{
+  "avertissement": "Généré avec l'aide d'une IA, non validé par un spécialiste. Le fichier machine (.dst) doit être vérifié par un professionnel avant usage : un fichier erroné peut endommager la brodeuse ou présenter un risque pour l'opérateur.",
+  "resultats": [
+    {
+      "mutation": "ordre inversé (bordure avant remplissage)",
+      "exigences_visees": [
+        "EX-QUAL-08"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-03 aucun point trop court (< 0,3 mm, tolérance de grille)",
+        "EX-QUAL-05 bloc 1 satin : rapport longueur / largeur (99e centile)",
+        "EX-QUAL-08 ordre : aucune bordure brodée avant ce qu'elle recouvre"
+      ]
+    },
+    {
+      "mutation": "remplissage sans sous-couche",
+      "exigences_visees": [
+        "EX-QUAL-07"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-07 bloc 1 remplissage : sous-couche présente"
+      ]
+    },
+    {
+      "mutation": "satin sans sous-couche",
+      "exigences_visees": [
+        "EX-QUAL-07"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-07 bloc 2 satin ≥ 2 mm : sous-couche présente"
+      ]
+    },
+    {
+      "mutation": "remplissage deux fois trop dense (0,125 mm)",
+      "exigences_visees": [
+        "EX-QUAL-06"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-03 aucun point trop court (< 0,3 mm, tolérance de grille)",
+        "EX-QUAL-06 bloc 1 remplissage : espacement entre rangs voisins"
+      ]
+    },
+    {
+      "mutation": "remplissage deux fois trop clair (0,5 mm)",
+      "exigences_visees": [
+        "EX-QUAL-06"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-06 bloc 1 remplissage : espacement entre rangs voisins"
+      ]
+    },
+    {
+      "mutation": "satin clairsemé (zigzag 1,0 mm)",
+      "exigences_visees": [
+        "EX-QUAL-05",
+        "EX-QUAL-13"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-05 bloc 2 satin : points en biais"
+      ]
+    },
+    {
+      "mutation": "satin sans longueur maximale",
+      "exigences_visees": [
+        "EX-QUAL-04"
+      ],
+      "detectee": null,
+      "statut": "sans objet (fichier modifié mais dégradation absente sur ce dessin)"
+    },
+    {
+      "mutation": "longueur minimale de point 0,1 mm",
+      "exigences_visees": [
+        "EX-QUAL-03"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-03 aucun point trop court (< 0,3 mm, tolérance de grille)"
+      ]
+    }
+  ]
+}

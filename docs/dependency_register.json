@@ -1,0 +1,266 @@
+[
+  {
+    "uid": "DEP_001",
+    "name": "numpy",
+    "ecosystem": "pypi",
+    "kind": "library",
+    "version_at_admission": "2.5.4",
+    "admitted_on": "2026-11-16",
+    "verdict": "adopt",
+    "needed_because": "Array arithmetic for stitch coordinates and raster masks in prototype/chaine; shapely, scipy and scikit-image require it anyway.",
+    "identity": {
+      "publisher": "NumPy developers (NumFOCUS)",
+      "repository": "https://github.com/numpy/numpy",
+      "name_checked_against": "imports in prototype/chaine and the PyPI project page linking the repository",
+      "already_trusted_dependents": ["scipy", "shapely", "scikit-image"]
+    },
+    "maintenance": {
+      "last_release": "2026-11-15",
+      "people_who_can_publish": null,
+      "backed_by": "NumFOCUS",
+      "stars": null
+    },
+    "vulnerabilities": { "tool": "uv audit", "checked_on": "2026-11-16", "result": "none known" },
+    "blast_radius": {
+      "packages_added": 0,
+      "runs_at_install": false,
+      "reaches_network_at_runtime": false,
+      "session_privileges": "n/a for a library"
+    },
+    "licence": { "identifier": "BSD-3-Clause AND 0BSD AND MIT AND Zlib (and bundled licences)", "compatible_with_distribution": true },
+    "exit_cost": "Spread through prototype/chaine and the tests; no realistic replacement.",
+    "reserves": [],
+    "not_checked": ["people_who_can_publish", "stars", "security issue time-to-fix"]
+  },
+  {
+    "uid": "DEP_002",
+    "name": "shapely",
+    "ecosystem": "pypi",
+    "kind": "library",
+    "version_at_admission": "2.2.0",
+    "admitted_on": "2026-11-16",
+    "verdict": "adopt",
+    "needed_because": "Polygon geometry (buffers, unions, differences, measures) at the heart of shape classification and satin generation; replaces writing a computational-geometry layer.",
+    "identity": {
+      "publisher": "Shapely contributors",
+      "repository": "https://github.com/shapely/shapely",
+      "name_checked_against": "imports in prototype/chaine and the PyPI project page linking the repository",
+      "already_trusted_dependents": ["geopandas"]
+    },
+    "maintenance": {
+      "last_release": "2026-10-07",
+      "people_who_can_publish": null,
+      "backed_by": "community project (OSGeo ecosystem)",
+      "stars": null
+    },
+    "vulnerabilities": { "tool": "uv audit", "checked_on": "2026-11-16", "result": "none known" },
+    "blast_radius": {
+      "packages_added": 0,
+      "runs_at_install": false,
+      "reaches_network_at_runtime": false,
+      "session_privileges": "n/a for a library"
+    },
+    "licence": { "identifier": "BSD-3-Clause", "compatible_with_distribution": true },
+    "exit_cost": "Its types appear across geometrie.py, satin.py, sequencer.py and the tests; high.",
+    "reserves": [],
+    "not_checked": ["people_who_can_publish", "stars", "security issue time-to-fix"]
+  },
+  {
+    "uid": "DEP_003",
+    "name": "pyembroidery",
+    "ecosystem": "pypi",
+    "kind": "library",
+    "version_at_admission": "1.5.1",
+    "admitted_on": "2026-11-16",
+    "verdict": "adopt_with_reserves",
+    "needed_because": "Reads DST embroidery files for quality checks and comparison (qualite.py, comparer.py, essai_dessin.py); replaces writing a multi-format embroidery reader.",
+    "identity": {
+      "publisher": "EmbroidePy (author Tatarize)",
+      "repository": "https://github.com/EmbroidePy/pyembroidery",
+      "name_checked_against": "imports in prototype/chaine and the PyPI project page linking the repository",
+      "already_trusted_dependents": ["Ink/Stitch"]
+    },
+    "maintenance": {
+      "last_release": "2024-03-27",
+      "people_who_can_publish": null,
+      "backed_by": "individual, under the EmbroidePy GitHub organisation",
+      "stars": null
+    },
+    "vulnerabilities": { "tool": "uv audit", "checked_on": "2026-11-16", "result": "none known" },
+    "blast_radius": {
+      "packages_added": 0,
+      "runs_at_install": false,
+      "reaches_network_at_runtime": false,
+      "session_privileges": "n/a for a library"
+    },
+    "licence": { "identifier": "MIT", "compatible_with_distribution": true },
+    "exit_cost": "Used in three modules for reading only; prototype/chaine/dst_brut.py already decodes raw DST, so a fallback exists.",
+    "reserves": ["No release for over two years and a single main author; parses untrusted files but reaches no network or credentials. Re-check if a DST from an outside source is processed."],
+    "not_checked": ["people_who_can_publish", "stars", "security issue time-to-fix", "licence read from the repository, not from PyPI metadata"]
+  },
+  {
+    "uid": "DEP_004",
+    "name": "pillow",
+    "ecosystem": "pypi",
+    "kind": "library",
+    "version_at_admission": "13.0.0",
+    "admitted_on": "2026-11-16",
+    "verdict": "adopt",
+    "needed_because": "Raster rendering of stitch previews and image loading (tracer.py, qualite.py, comparer.py).",
+    "identity": {
+      "publisher": "Python Pillow (Tidelift-supported)",
+      "repository": "https://github.com/python-pillow/Pillow",
+      "name_checked_against": "imports (PIL) in prototype/chaine and the PyPI project page linking the repository",
+      "already_trusted_dependents": ["scikit-image", "imageio", "matplotlib"]
+    },
+    "maintenance": {
+      "last_release": "2026-10-16",
+      "people_who_can_publish": null,
+      "backed_by": "community, Tidelift-funded",
+      "stars": null
+    },
+    "vulnerabilities": { "tool": "uv audit", "checked_on": "2026-11-16", "result": "none known" },
+    "blast_radius": {
+      "packages_added": 0,
+      "runs_at_install": false,
+      "reaches_network_at_runtime": false,
+      "session_privileges": "n/a for a library"
+    },
+    "licence": { "identifier": "MIT-CMU", "compatible_with_distribution": true },
+    "exit_cost": "Three modules, drawing and image I/O only; moderate.",
+    "reserves": ["Image decoders have a frequent CVE history; keep the audit in the shipping gate."],
+    "not_checked": ["people_who_can_publish", "stars", "security issue time-to-fix"]
+  },
+  {
+    "uid": "DEP_005",
+    "name": "scipy",
+    "ecosystem": "pypi",
+    "kind": "library",
+    "version_at_admission": "1.18.1",
+    "admitted_on": "2026-11-16",
+    "verdict": "adopt",
+    "needed_because": "scipy.ndimage morphology and labelling in qualite.py; scikit-image requires it anyway.",
+    "identity": {
+      "publisher": "SciPy developers (NumFOCUS)",
+      "repository": "https://github.com/scipy/scipy",
+      "name_checked_against": "imports in prototype/chaine/qualite.py and the PyPI project page linking the repository",
+      "already_trusted_dependents": ["scikit-image"]
+    },
+    "maintenance": {
+      "last_release": "2026-08-21",
+      "people_who_can_publish": null,
+      "backed_by": "NumFOCUS",
+      "stars": null
+    },
+    "vulnerabilities": { "tool": "uv audit", "checked_on": "2026-11-16", "result": "none known" },
+    "blast_radius": {
+      "packages_added": 0,
+      "runs_at_install": false,
+      "reaches_network_at_runtime": false,
+      "session_privileges": "n/a for a library"
+    },
+    "licence": { "identifier": "BSD-3-Clause", "compatible_with_distribution": true },
+    "exit_cost": "One import in qualite.py; low, though scikit-image keeps it in the tree.",
+    "reserves": [],
+    "not_checked": ["people_who_can_publish", "stars", "security issue time-to-fix", "licence identifier read from the repository, PyPI metadata holds the full text"]
+  },
+  {
+    "uid": "DEP_006",
+    "name": "scikit-image",
+    "ecosystem": "pypi",
+    "kind": "library",
+    "version_at_admission": "0.26.0",
+    "admitted_on": "2026-11-16",
+    "verdict": "adopt",
+    "needed_because": "Contour tracing and morphology on rasters (tracer.py, qualite.py).",
+    "identity": {
+      "publisher": "scikit-image team",
+      "repository": "https://github.com/scikit-image/scikit-image",
+      "name_checked_against": "imports (skimage) in prototype/chaine and the PyPI project page linking the repository",
+      "already_trusted_dependents": []
+    },
+    "maintenance": {
+      "last_release": "2025-12-20",
+      "people_who_can_publish": null,
+      "backed_by": "community project (NumFOCUS sponsored)",
+      "stars": null
+    },
+    "vulnerabilities": { "tool": "uv audit", "checked_on": "2026-11-16", "result": "none known" },
+    "blast_radius": {
+      "packages_added": 5,
+      "runs_at_install": false,
+      "reaches_network_at_runtime": false,
+      "session_privileges": "n/a for a library"
+    },
+    "licence": { "identifier": "BSD-3-Clause", "compatible_with_distribution": true },
+    "exit_cost": "Two modules, a handful of calls (measure.find_contours, morphology); moderate.",
+    "reserves": ["Largest tree of the set: imageio, lazy-loader, networkx, packaging, tifffile."],
+    "not_checked": ["people_who_can_publish", "stars", "security issue time-to-fix"]
+  },
+  {
+    "uid": "DEP_007",
+    "name": "ezdxf",
+    "ecosystem": "pypi",
+    "kind": "library",
+    "version_at_admission": "1.4.5",
+    "admitted_on": "2026-11-16",
+    "verdict": "adopt_with_reserves",
+    "needed_because": "Reads DXF source drawings in tools/inspect_sources.py.",
+    "identity": {
+      "publisher": "Manfred Moitzi (mozman)",
+      "repository": "https://github.com/mozman/ezdxf",
+      "name_checked_against": "imports in tools/inspect_sources.py and the PyPI project page linking the repository",
+      "already_trusted_dependents": []
+    },
+    "maintenance": {
+      "last_release": "2026-10-16",
+      "people_who_can_publish": null,
+      "backed_by": "individual",
+      "stars": null
+    },
+    "vulnerabilities": { "tool": "uv audit", "checked_on": "2026-11-16", "result": "none known" },
+    "blast_radius": {
+      "packages_added": 3,
+      "runs_at_install": false,
+      "reaches_network_at_runtime": false,
+      "session_privileges": "n/a for a library"
+    },
+    "licence": { "identifier": "MIT", "compatible_with_distribution": true },
+    "exit_cost": "One tool script; low.",
+    "reserves": ["Single maintainer, but active.", "tools/inspect_sources.py also imports ezdxf.addons.drawing.matplotlib, which needs matplotlib, not declared here."],
+    "not_checked": ["people_who_can_publish", "stars", "security issue time-to-fix", "licence read from the repository, not from PyPI metadata"]
+  },
+  {
+    "uid": "DEP_008",
+    "name": "matplotlib",
+    "ecosystem": "pypi",
+    "kind": "library",
+    "version_at_admission": "3.11.2",
+    "admitted_on": "2026-11-16",
+    "verdict": "adopt",
+    "needed_because": "Rendering backend of ezdxf.addons.drawing, imported by tools/inspect_sources.py to render DXF sources; the tool cannot run without it.",
+    "identity": {
+      "publisher": "Matplotlib development team (NumFOCUS)",
+      "repository": "https://github.com/matplotlib/matplotlib",
+      "name_checked_against": "ezdxf's drawing add-on module name (ezdxf.addons.drawing.matplotlib) and the PyPI project page",
+      "already_trusted_dependents": ["ezdxf (optional drawing add-on)"]
+    },
+    "maintenance": {
+      "last_release": "2026-09-11",
+      "people_who_can_publish": null,
+      "backed_by": "NumFOCUS",
+      "stars": null
+    },
+    "vulnerabilities": { "tool": "uv audit", "checked_on": "2026-11-16", "result": "none known" },
+    "blast_radius": {
+      "packages_added": 6,
+      "runs_at_install": false,
+      "reaches_network_at_runtime": false,
+      "session_privileges": "n/a for a library"
+    },
+    "licence": { "identifier": "PSF-based Matplotlib licence", "compatible_with_distribution": true },
+    "exit_cost": "One tool script, reached only through ezdxf's drawing add-on; low.",
+    "reserves": [],
+    "not_checked": ["people_who_can_publish", "stars", "security issue time-to-fix", "licence read from the project, PyPI metadata holds no expression"]
+  }
+]

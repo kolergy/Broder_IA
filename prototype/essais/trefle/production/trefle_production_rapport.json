@@ -1,0 +1,392 @@
+{
+  "avertissement": "Généré avec l'aide d'une IA, non validé par un spécialiste. Le fichier machine (.dst) doit être vérifié par un professionnel avant usage : un fichier erroné peut endommager la brodeuse ou présenter un risque pour l'opérateur.",
+  "nom": "trefle_production",
+  "config": "production",
+  "reglages": {
+    "nom": "tisse_stable",
+    "detail_min_mm": 0.4,
+    "satin_largeur_min_mm": 1.0,
+    "satin_largeur_max_mm": 7.0,
+    "satin_largeur_max_decoupe_mm": 10.0,
+    "petite_forme_largeur_max_mm": 6.0,
+    "aire_min_mm2": 1.5,
+    "allongement_min": 3.0,
+    "appendice_largeur_mm": 2.0,
+    "appendice_longueur_min_mm": 5.0,
+    "marge_seuil": 0.1,
+    "ouverture_min_mm": 0.8,
+    "remplissage_espacement_mm": 0.25,
+    "remplissage_sous_couche_retrait_mm": 0.4,
+    "satin_espacement_zigzag_mm": 0.4,
+    "satin_longueur_max_mm": 7.0,
+    "compensation_traction_mm": 0.2,
+    "point_droit_longueur_mm": 2.5,
+    "pas_barreaux_mm": 1.0,
+    "longueur_min_point_mm": 0.3,
+    "satin_part_biais_max": 0.02,
+    "satin_rapport_p99_max": 1.4,
+    "remplissage_espacement_plage_mm": [
+      0.2,
+      0.3
+    ],
+    "satin_espacement_plage_mm": [
+      0.25,
+      0.55
+    ],
+    "seuil_coupe_deplacement_mm": 10.0,
+    "vitesse_points_par_min": 750,
+    "duree_coupe_s": 3.5,
+    "duree_changement_s": 10,
+    "poussee_raccourcissement_mm": 0.2,
+    "satin_points_courts_retrait_pct": 15,
+    "satin_points_courts_distance_mm": 0.25
+  },
+  "cible": {
+    "largeur_points_original_mm": 49.9
+  },
+  "tracage": {
+    "journal": [
+      {
+        "evenement": "couleur de fond détectée sur le bord : #ffffff"
+      }
+    ],
+    "couches": [
+      {
+        "couleur": "#04caa2",
+        "formes": 1
+      }
+    ]
+  },
+  "mise_a_l_echelle": {
+    "mm_par_px": 0.09999999999999999,
+    "journal_retrait": []
+  },
+  "chaine": {
+    "approbations": [
+      "tout"
+    ],
+    "alertes": [
+      "approbation globale « tout » utilisée : réservée aux essais",
+      "c0_f0 : SATIN FORCÉ malgré le refus de la garde (satin en anneau refusé : 0 barreau(x) hors de la forme, 7% de barreaux en biais (seuil 2%) — la forme n'est pas une colonne annulaire (lettre à contre-forme ?)) — qualité non conforme attendue"
+    ],
+    "bloquants": [],
+    "defauts": [],
+    "corrections": [],
+    "formes": [
+      {
+        "id": "c0_f0",
+        "couleur": "#04caa2",
+        "rang": 0,
+        "mesures": {
+          "aire_mm2": 506.5371995948997,
+          "perimetre_mm": 433.26837673575756,
+          "largeur_max_mm": 3.797924804687497,
+          "largeur_moyenne_mm": 2.338214496110467,
+          "allongement": 35.117098139195086,
+          "compacite": 0.03390839432520053,
+          "trous": 1,
+          "appendices": []
+        },
+        "decision": "satin",
+        "mode": "semi_auto",
+        "motif": "colonne de largeur compatible satin",
+        "satin_force": true
+      }
+    ],
+    "sequence": [
+      "c0_f0 (satin, #04caa2, rang 0)"
+    ],
+    "contraintes_ordre": [],
+    "blocs_couleur_prevus": 1,
+    "export": {
+      "code_sortie": 0,
+      "octets": 4154,
+      "sortie_erreur": ""
+    }
+  },
+  "verification": {
+    "refuse": true,
+    "lignes": [
+      {
+        "exigence": "EX-QUAL-01",
+        "critere": "fichier lisible et non vide",
+        "statut": "OK",
+        "valeur": 1210,
+        "seuil": "> 0"
+      },
+      {
+        "exigence": "EX-QUAL-02",
+        "critere": "largeur conforme à la taille demandée",
+        "statut": "OK",
+        "valeur": 50.2,
+        "seuil": "49.90 ± 0,5 mm"
+      },
+      {
+        "exigence": "EX-QUAL-03",
+        "critere": "aucun point trop court (< 0,3 mm, tolérance de grille)",
+        "statut": "OK",
+        "valeur": 0,
+        "seuil": "0"
+      },
+      {
+        "exigence": "EX-QUAL-04",
+        "critere": "bloc 1 satin : points ≤ 7 mm",
+        "statut": "OK",
+        "valeur": 6.89,
+        "seuil": "≤ 7 mm"
+      },
+      {
+        "exigence": "EX-QUAL-05",
+        "critere": "bloc 1 satin : points en biais",
+        "statut": "ECHEC",
+        "valeur": "13.6%",
+        "seuil": "≤ 2%"
+      },
+      {
+        "exigence": "EX-QUAL-05",
+        "critere": "bloc 1 satin : rapport longueur / largeur (99e centile)",
+        "statut": "ECHEC",
+        "valeur": 2.69,
+        "seuil": "≤ 1.4"
+      },
+      {
+        "exigence": "EX-QUAL-13",
+        "critere": "bloc 1 satin : espacement de crête à crête",
+        "statut": "OK",
+        "valeur": 0.315,
+        "seuil": "0.25–0.55 mm (à étalonner)"
+      },
+      {
+        "exigence": "EX-QUAL-07",
+        "critere": "bloc 1 satin ≥ 2 mm : sous-couche présente",
+        "statut": "OK",
+        "valeur": true,
+        "seuil": "oui"
+      },
+      {
+        "exigence": "EX-QUAL-11",
+        "critere": "bloc 1 : pénétrations max par mm²",
+        "statut": "INFO",
+        "valeur": 12,
+        "seuil": "à étalonner"
+      },
+      {
+        "exigence": "EX-QUAL-08",
+        "critere": "ordre : aucune bordure brodée avant ce qu'elle recouvre",
+        "statut": "OK",
+        "valeur": "aucun défaut",
+        "seuil": "aucun défaut"
+      },
+      {
+        "exigence": "EX-QUAL-09",
+        "critere": "nombre de blocs de couleur = prévu",
+        "statut": "OK",
+        "valeur": 1,
+        "seuil": 1
+      },
+      {
+        "exigence": "EX-QUAL-10",
+        "critere": "déplacements de plus de 10.0 mm coupés",
+        "statut": "OK",
+        "valeur": "aucun",
+        "seuil": "aucun non coupé"
+      },
+      {
+        "exigence": "EX-QUAL-12",
+        "critere": "temps de broderie estimé (paramètres non vérifiés)",
+        "statut": "INFO",
+        "valeur": "1.6 min",
+        "seuil": "—"
+      }
+    ]
+  },
+  "verification_original": {
+    "refuse": true,
+    "lignes": [
+      {
+        "exigence": "EX-QUAL-01",
+        "critere": "fichier lisible et non vide",
+        "statut": "OK",
+        "valeur": 1472,
+        "seuil": "> 0"
+      },
+      {
+        "exigence": "EX-QUAL-02",
+        "critere": "largeur conforme à la taille demandée",
+        "statut": "OK",
+        "valeur": 49.9,
+        "seuil": "49.90 ± 0,5 mm"
+      },
+      {
+        "exigence": "EX-QUAL-03",
+        "critere": "aucun point trop court (< 0,3 mm, tolérance de grille)",
+        "statut": "ECHEC",
+        "valeur": 19,
+        "seuil": "0"
+      },
+      {
+        "exigence": "EX-QUAL-04",
+        "critere": "bloc 1 satin : points ≤ 7 mm",
+        "statut": "OK",
+        "valeur": 3.61,
+        "seuil": "≤ 7 mm"
+      },
+      {
+        "exigence": "EX-QUAL-05",
+        "critere": "bloc 1 satin : points en biais",
+        "statut": "OK",
+        "valeur": "0.0%",
+        "seuil": "≤ 2%"
+      },
+      {
+        "exigence": "EX-QUAL-05",
+        "critere": "bloc 1 satin : rapport longueur / largeur (99e centile)",
+        "statut": "OK",
+        "valeur": 1.16,
+        "seuil": "≤ 1.4"
+      },
+      {
+        "exigence": "EX-QUAL-13",
+        "critere": "bloc 1 satin : espacement de crête à crête",
+        "statut": "OK",
+        "valeur": 0.362,
+        "seuil": "0.25–0.55 mm (à étalonner)"
+      },
+      {
+        "exigence": "EX-QUAL-07",
+        "critere": "bloc 1 satin ≥ 2 mm : sous-couche présente",
+        "statut": "ECHEC",
+        "valeur": false,
+        "seuil": "oui"
+      },
+      {
+        "exigence": "EX-QUAL-11",
+        "critere": "bloc 1 : pénétrations max par mm²",
+        "statut": "INFO",
+        "valeur": 11,
+        "seuil": "à étalonner"
+      },
+      {
+        "exigence": "EX-QUAL-08",
+        "critere": "ordre : aucune bordure brodée avant ce qu'elle recouvre",
+        "statut": "OK",
+        "valeur": "aucun défaut",
+        "seuil": "aucun défaut"
+      },
+      {
+        "exigence": "EX-QUAL-09",
+        "critere": "nombre de blocs de couleur = prévu",
+        "statut": "OK",
+        "valeur": 1,
+        "seuil": 1
+      },
+      {
+        "exigence": "EX-QUAL-10",
+        "critere": "déplacements de plus de 10.0 mm coupés",
+        "statut": "OK",
+        "valeur": "aucun",
+        "seuil": "aucun non coupé"
+      },
+      {
+        "exigence": "EX-QUAL-12",
+        "critere": "temps de broderie estimé (paramètres non vérifiés)",
+        "statut": "INFO",
+        "valeur": "2.0 min",
+        "seuil": "—"
+      }
+    ]
+  },
+  "mesures": {
+    "nous": {
+      "dimensions_mm": [
+        50.2,
+        49.6
+      ],
+      "points": 1210,
+      "fil_mm": 3874.267616199444,
+      "changements_couleur": 0,
+      "coupes_reelles": 0,
+      "deplacements": [
+        {
+          "longueur_mm": 20.796634343085422,
+          "coupe": false,
+          "initial": true
+        }
+      ],
+      "defauts_ordre": [],
+      "temps_estime_min": 1.6133333333333333,
+      "blocs": [
+        {
+          "type_deduit": "satin",
+          "points": 1210,
+          "fil_mm": 3874.267616199444,
+          "aire_couverte_mm2": 608.365,
+          "direction_dominante_deg": 165,
+          "part_fil_direction_dominante": 0.22880520083834438,
+          "espacement_rangs_estime_mm": null,
+          "satin_part_points_en_biais": 0.1361344537815126,
+          "satin_rapport_p99": 2.689607734393387,
+          "satin_espacement_estime_mm": 0.3154032973264176,
+          "sous_couche_detectee": true,
+          "point_median_mm": 3.041381265149109,
+          "point_max_mm": 6.888396039717811,
+          "points_moins_1mm": 18,
+          "points_moins_0_25mm": 0,
+          "penetrations_max_par_mm2": 12
+        }
+      ]
+    },
+    "original": {
+      "dimensions_mm": [
+        49.9,
+        49.3
+      ],
+      "points": 1472,
+      "fil_mm": 3481.6422184316234,
+      "changements_couleur": 0,
+      "coupes_reelles": 0,
+      "deplacements": [
+        {
+          "longueur_mm": 16.32482771731451,
+          "coupe": false,
+          "initial": true
+        }
+      ],
+      "defauts_ordre": [],
+      "temps_estime_min": 1.9626666666666666,
+      "blocs": [
+        {
+          "type_deduit": "satin",
+          "points": 1472,
+          "fil_mm": 3481.6422184316234,
+          "aire_couverte_mm2": 569.735,
+          "direction_dominante_deg": 95,
+          "part_fil_direction_dominante": 0.25180451678101484,
+          "espacement_rangs_estime_mm": null,
+          "satin_part_points_en_biais": 0.0,
+          "satin_rapport_p99": 1.1614612080466893,
+          "satin_espacement_estime_mm": 0.36180389519226824,
+          "sous_couche_detectee": false,
+          "point_median_mm": 2.624880949681338,
+          "point_max_mm": 3.605551275463991,
+          "points_moins_1mm": 126,
+          "points_moins_0_25mm": 19,
+          "penetrations_max_par_mm2": 11
+        }
+      ]
+    }
+  },
+  "silhouette": {
+    "iou": 0.9302823717544081,
+    "original_couvert_par_nous": 0.9876070533468551,
+    "notre_broderie_hors_original": 0.05872960452362298,
+    "surface_original_mm2": 559.5925,
+    "surface_notre_mm2": 587.14,
+    "translation_mm": [
+      0.0,
+      0.0
+    ],
+    "avertissement": "silhouette seulement : ne mesure ni la direction, ni la densité, ni l'ordre"
+  },
+  "resultat": "REFUSE"
+}

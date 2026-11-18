@@ -1,0 +1,7 @@
+critique_scratch/
+tmp/
+.local/
+__pycache__/
+.venv/
+.env
+.chc_harness/

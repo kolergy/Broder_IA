@@ -1,0 +1,78 @@
+{
+  "avertissement": "Généré avec l'aide d'une IA, non validé par un spécialiste. Le fichier machine (.dst) doit être vérifié par un professionnel avant usage : un fichier erroné peut endommager la brodeuse ou présenter un risque pour l'opérateur.",
+  "resultats": [
+    {
+      "mutation": "ordre inversé (bordure avant remplissage)",
+      "exigences_visees": [
+        "EX-QUAL-08"
+      ],
+      "detectee": null,
+      "statut": "sans objet (fichier identique : la mutation ne s'applique pas à ce dessin)"
+    },
+    {
+      "mutation": "remplissage sans sous-couche",
+      "exigences_visees": [
+        "EX-QUAL-07"
+      ],
+      "detectee": null,
+      "statut": "sans objet (fichier identique : la mutation ne s'applique pas à ce dessin)"
+    },
+    {
+      "mutation": "satin sans sous-couche",
+      "exigences_visees": [
+        "EX-QUAL-07"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-07 bloc 1 satin ≥ 2 mm : sous-couche présente"
+      ]
+    },
+    {
+      "mutation": "remplissage deux fois trop dense (0,125 mm)",
+      "exigences_visees": [
+        "EX-QUAL-06"
+      ],
+      "detectee": null,
+      "statut": "sans objet (fichier identique : la mutation ne s'applique pas à ce dessin)"
+    },
+    {
+      "mutation": "remplissage deux fois trop clair (0,5 mm)",
+      "exigences_visees": [
+        "EX-QUAL-06"
+      ],
+      "detectee": null,
+      "statut": "sans objet (fichier identique : la mutation ne s'applique pas à ce dessin)"
+    },
+    {
+      "mutation": "satin clairsemé (zigzag 1,0 mm)",
+      "exigences_visees": [
+        "EX-QUAL-05",
+        "EX-QUAL-13"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-13 bloc 1 satin : espacement de crête à crête"
+      ]
+    },
+    {
+      "mutation": "satin sans longueur maximale",
+      "exigences_visees": [
+        "EX-QUAL-04"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-04 bloc 1 satin : points ≤ 7 mm"
+      ]
+    },
+    {
+      "mutation": "longueur minimale de point 0,1 mm",
+      "exigences_visees": [
+        "EX-QUAL-03"
+      ],
+      "detectee": true,
+      "nouveaux_echecs": [
+        "EX-QUAL-03 aucun point trop court (< 0,3 mm, tolérance de grille)"
+      ]
+    }
+  ]
+}

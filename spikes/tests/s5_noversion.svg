@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:inkstitch="http://inkstitch.org/namespace"
+     width="100mm" height="100mm" viewBox="0 0 100 100">
+  <rect id="square" x="10" y="10" width="40" height="40" style="fill:#ff0000;stroke:none"
+        inkstitch:fill_method="tatami_fill" inkstitch:row_spacing_mm="0.4"/>
+  <path id="runline" d="M 10,70 L 90,70" style="fill:none;stroke:#0000ff;stroke-width:0.3"
+        inkstitch:stroke_method="running_stitch" inkstitch:running_stitch_length_mm="2.5"/>
+  <path id="satin" d="M 60,10 L 60,50 M 64,10 L 64,50 M 58,30 L 66,30"
+        style="fill:none;stroke:#00aa00;stroke-width:0.3" inkstitch:satin_column="true"/>
+</svg>
